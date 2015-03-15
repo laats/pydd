@@ -6,7 +6,7 @@
 # Description:  
 # Author:       Staal Vinterbo
 # Created:      Wed Jun  8 15:58:33 2011
-# Modified:     Sun Mar 15 14:28:17 2015 (Staal Vinterbo) staal@mats.gateway.pace.com
+# Modified:     Sun Mar 15 14:52:48 2015 (Staal Vinterbo) staal@mats.gateway.pace.com
 # Language:     Python
 # Package:      N/A
 # Status:       Experimental
@@ -128,24 +128,23 @@ if __name__ == '__main__':
     print 'One of:\n', 'and one of:\n'.join(out)
     print
     print 'Observations not covered:', list(left)
-
-    try:
-        from Gplt import mpG
-        print('plot explanation? (y/[n])')
-        if sys.stdin.readline().lstrip().rstrip() == 'y':
-            mpG(
-                dict(
-                    map(lambda (e,_):
-                        (e,
-                         dict((s,v) for (s,v) in testG[e].items()
-                              if s in target)),
-                        filter(lambda (e, s) : e in sol, testG.items())
+    print('plot explanation? (y/[n])')
+    if sys.stdin.readline().lstrip().rstrip() == 'y':
+        try:
+            from Gplt import mpG
+                mpG(
+                    dict(
+                        map(lambda (e,_):
+                            (e,
+                             dict((s,v) for (s,v) in testG[e].items()
+                                  if s in target)),
+                            filter(lambda (e, s) : e in sol, testG.items())
+                            )
                         )
                     )
-                )
-    except:
-        print('Sorry, plotting failed. Are needed packages installed?')
-        pass
+        except:
+            print('Sorry, plotting failed. Are needed packages installed?')
+            pass
 
     
 
