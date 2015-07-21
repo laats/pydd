@@ -6,7 +6,7 @@
 # Description:  
 # Author:       Staal Vinterbo
 # Created:      Wed Jun  8 15:58:33 2011
-# Modified:     Sun Mar 15 14:52:48 2015 (Staal Vinterbo) staal@mats.gateway.pace.com
+# Modified:     Tue Jul 21 11:02:21 2015 (Staal Vinterbo) staal@mats.gateway.pace.com
 # Language:     Python
 # Package:      N/A
 # Status:       Experimental
@@ -132,7 +132,7 @@ if __name__ == '__main__':
     if sys.stdin.readline().lstrip().rstrip() == 'y':
         try:
             from Gplt import mpG
-                mpG(
+            mpG(
                     dict(
                         map(lambda (e,_):
                             (e,
